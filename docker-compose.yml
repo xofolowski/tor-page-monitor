@@ -1,0 +1,39 @@
+services:
+  page-monitor:
+    build: ./data/Dockerfiles/page-monitor/
+    container_name: page-monitor
+    volumes:
+      - ./data/conf/page-monitor:/app/data
+    restart: always
+    depends_on:
+      - tor-privoxy
+    networks:
+      tpmnet:
+        ipv4_address: 10.23.200.251
+        aliases:
+          - page-monitor
+
+  tor-privoxy:
+    restart: always
+    image: dockage/tor-privoxy:latest
+    ports:
+      - "9050:9050" # Tor proxy
+      - "9051:9051" # Tor control port
+      - "8118:8118" # Privoxy
+    networks:
+      tpmnet:
+        ipv4_address: 10.23.200.250
+        aliases:
+          - privoxy
+
+
+networks:
+  tpmnet:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: br-tpmnet
+    internal: false
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.23.200.0/24
