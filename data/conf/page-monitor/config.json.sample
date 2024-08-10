@@ -1,7 +1,13 @@
 {
   "urls": [
-    "http://example.com",
-    "http://example2.com"
+    {
+      "name": "Sample Page 1",
+      "url": "http://example.com"
+    },
+    {
+      "name": "Sample Page 2",
+      "url": "http://example2.com"
+    }
   ],
   "proxy": "privoxy:9050",
   "check_interval": 60,
