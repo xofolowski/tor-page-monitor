@@ -1,16 +1,10 @@
 {
   "urls": [
-    {
-      "name": "Sample Page 1",
-      "url": "http://example.com"
-    },
-    {
-      "name": "Sample Page 2",
-      "url": "http://example2.com"
-    }
+    "http://example.com",
+    "http://example2.com"
   ],
   "proxy": "privoxy:9050",
-  "check_interval": 60,
+  "check_interval": 10,
   "db_file": "page_hashes.db",
   "email": {
     "from": "your_email@example.com",
