@@ -4,8 +4,7 @@
     "http://example2.com"
   ],
   "proxy": "privoxy:9050",
-  "check_interval": 10,
-  "db_file": "page_hashes.db",
+  "check_interval": 3600,
   "email": {
     "from": "your_email@example.com",
     "to": "recipient@example.com",
