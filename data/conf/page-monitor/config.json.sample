@@ -1,7 +1,9 @@
 {
-  "urls": [
-    "http://example.com",
-    "http://example2.com"
+  "sites": [
+    {
+      "name": "Page Name",
+      "url": "http://site127648736478367823.onion/foo/bar/"
+    }
   ],
   "proxy": "privoxy:9050",
   "check_interval": 3600,
